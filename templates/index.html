@@ -41,7 +41,7 @@
   </style>
 {% endblock %}
 {% block content %}
-      <h1>BU Dining Hall Food Search</h1>
+      <h1>Artworks</h1>
 
       <div class="mb-4">
           <form action="/" method="GET">
@@ -52,9 +52,9 @@
       <table class="table">
         <thead>
             <tr>
-                <th>Dining Hall</th>
-                <th>MEAT</th>
-                <th>Meal Type</th>
+                <th>Subject</th>
+                <th>Style</th>
+                <th>Year</th>
             </tr>
         </thead>
         <tbody>
@@ -148,7 +148,7 @@
               </tbody>
           </table>
           <div class="mb-4">
-            <a href="{{ url_for('add_dhall_form') }}" class="btn btn-success">+ Add Dhall Item</a>
+            <a href="{{ url_for('add_dhall_form') }}" class="btn btn-success">+ Add work</a>
           </div>
           <form method="POST" action="/add_dhall">
             <label>Name: <input name="name" required></label><br>

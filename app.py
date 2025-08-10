@@ -43,7 +43,8 @@ def diningHall(name):
     # TODO Write SQL Query to get all food items at dining hall -> {name} 
 
     sql = f'''
-        SELECT NULL
+        SELECT *
+        FROM "work"
     '''
 
     with db.engine.connect() as conn:
