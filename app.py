@@ -37,7 +37,7 @@ from models import Restaurant, Review
 def index():
     return render_template('index.html')
 
-@app.route('/dining_hall/<name>', methods = ['GET'])
+@app.route('/diningHall/<name>', methods = ['GET'])
 def diningHall(name):
 
     # TODO Write SQL Query to get all food items at dining hall -> {name} 
@@ -48,6 +48,7 @@ def diningHall(name):
         LEFT JOIN "subject"
         ON "work".work_id = "subject".work_id
         WHERE "subject".subject = '{name}'
+        LIMIT 25
     '''
 
     with db.engine.connect() as conn:
