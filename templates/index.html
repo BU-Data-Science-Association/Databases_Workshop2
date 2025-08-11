@@ -54,7 +54,7 @@
             <tr>
                 <th>Subject</th>
                 <th>Style</th>
-                <th>Year</th>
+                <th>Museum</th>
             </tr>
         </thead>
         <tbody>
@@ -70,8 +70,8 @@
               </form>
             </td>
             <td>
-              <form action="{{ url_for('mealType', name = 'Breakfast' )}}" method="GET">
-                  <button type="submit" class="btn btn-primary">Breakfast</button>
+              <form action="{{ url_for('mealType', name = '30' )}}" method="GET">
+                  <button type="submit" class="btn btn-primary">MOMA</button>
               </form>
             </td>
         </tr>
@@ -82,13 +82,13 @@
                 </form>
             </td>
             <td>
-              <form action="{{ url_for('meat', name = 'Beef' )}}" method="GET">
-                  <button type="submit" class="btn btn-primary">Beef</button>
+              <form action="{{ url_for('meat', name = 'Neo-Classicism' )}}" method="GET">
+                  <button type="submit" class="btn btn-primary">Neo-Classicism</button>
               </form>
             </td>
             <td>
-              <form action="{{ url_for('mealType', name = 'Lunch' )}}" method="GET">
-                  <button type="submit" class="btn btn-primary">Lunch</button>
+              <form action="{{ url_for('mealType', name = '42' )}}" method="GET">
+                  <button type="submit" class="btn btn-primary">Museum of Fine Arts</button>
               </form>
             </td>
         </tr>
@@ -99,13 +99,13 @@
               </form>
             </td>
             <td>
-              <form action="{{ url_for('meat', name = 'Pork' )}}" method="GET">
-                  <button type="submit" class="btn btn-primary">Pork</button>
+              <form action="{{ url_for('meat', name = 'Expressionism' )}}" method="GET">
+                  <button type="submit" class="btn btn-primary">Expressionism</button>
               </form>
             </td>
             <td>
-              <form action="{{ url_for('mealType', name = 'Dinner' )}}" method="GET">
-                  <button type="submit" class="btn btn-primary">Dinner</button>
+              <form action="{{ url_for('mealType', name = '40' )}}" method="GET">
+                  <button type="submit" class="btn btn-primary">Louvre</button>
               </form>
             </td>
         </tr>
@@ -113,6 +113,11 @@
             <td>
               <form action="{{ url_for('diningHall', name = 'Architectures' )}}" method="GET">
                 <button type="submit" class="btn btn-primary">Architectures</button>
+              </form>
+            </td>
+            <td>
+              <form action="{{ url_for('meat', name = 'Post-Impressionism' )}}" method="GET">
+                  <button type="submit" class="btn btn-primary">Post-Impressionism</button>
               </form>
             </td>
             <td></td>
@@ -151,12 +156,12 @@
             <a href="{{ url_for('add_dhall_form') }}" class="btn btn-success">+ Add work</a>
           </div>
           <form method="POST" action="/add_dhall">
-            <label>Name: <input name="name" required></label><br>
-            <label>Ingredients: <input name="ingredients" required></label><br>
-            <label>Station: <input name="station" required></label><br>
-            <label>Location: <input name="location" required></label><br>
-            <label>Meal Type: <input name="meal_type" required></label><br>
-            <label>Item ID: <input name="item_id" type="number" required></label><br>
+            <label>Work ID: <input name="work_id" required></label><br>
+            <label>Work Name: <input name="work_name" required></label><br>
+            <label>Artist ID: <input name="artist_id" required></label><br>
+            <label>Style: <input name="style" required></label><br>
+            <label>Museum ID: <input name="museum_id" required></label><br>
+            <label>Subject: <input name="subject" required></label><br>
             <button type="submit">Add Dhall Item</button>
           </form>    
       {% else %}

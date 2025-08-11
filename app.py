@@ -63,7 +63,12 @@ def meat(name):
     # TODO Write SQL Query to get all food items containing meat -> {name} 
 
     sql = f'''
-        SELECT NULL
+        SELECT * 
+        FROM "work"
+        LEFT JOIN "subject"
+        ON "work".work_id = "subject".work_id
+        WHERE "work".style = '{name}'
+        LIMIT 25
     '''
 
     with db.engine.connect() as conn:
@@ -79,7 +84,12 @@ def mealType(name):
     # TODO Write SQL Query to get all food item served during meal_type -> {name} 
 
     sql = f'''
-        SELECT NULL
+        SELECT *
+        FROM "work"
+        LEFT JOIN "subject"
+        ON "work".work_id = "subject".work_id
+        WHERE "work".museum_id = '{name}'
+        LIMIT 25
     '''
     
     with db.engine.connect() as conn:
