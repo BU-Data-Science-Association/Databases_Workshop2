@@ -60,8 +60,8 @@
         <tbody>
           <tr>
             <td>
-              <form action="{{ url_for('diningHall', name = 'Warren' )}}" method="GET">
-                  <button type="submit" class="btn btn-primary">Warren</button>
+              <form action="{{ url_for('diningHall', name = 'Still-Life' )}}" method="GET">
+                  <button type="submit" class="btn btn-primary">Still-Life</button>
               </form>
             </td>
             <td>
@@ -125,24 +125,24 @@
           <table class="table">
               <thead>
                   <tr>
-                      <th>Name</th>
-                      <th>Ingredients</th>
-                      <th>Station</th>
-                      <th>Location</th>
-                      <th>Meal Type</th>
-                      <th>Calories</th>
+                      <th>Work ID</th>
+                      <th>Work Name</th>
+                      <th>Artist ID</th>
+                      <th>Style</th>
+                      <th>Museum ID</th>
+                      <th>Subject</th>
                   </tr>
               </thead>
               <tbody>
                 {% for row in results %}
                   <tr>
                       <!-- Access the keys in each row dictionary -->
-                      <td>{{ row['Name'] }}</td>
-                      <td>{{ row['Ingredients'] }}</td>
-                      <td>{{ row['Station'] }}</td>
-                      <td>{{ row['Location'] }}</td>
-                      <td>{{ row['Meal Type'] }}</td>
-                      <td>{{ row['Calories'] }}</td>
+                      <td>{{ row['work_id'] }}</td>
+                      <td>{{ row['work_name'] }}</td>
+                      <td>{{ row['artist_id'] }}</td>
+                      <td>{{ row['style'] }}</td>
+                      <td>{{ row['museum_id'] }}</td>
+                      <td>{{ row['subject'] }}</td>
                   </tr>
                 {% endfor %}
               </tbody>

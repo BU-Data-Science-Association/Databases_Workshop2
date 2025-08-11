@@ -44,7 +44,10 @@ def diningHall(name):
 
     sql = f'''
         SELECT *
-        FROM "work"
+        FROM "work" 
+        LEFT JOIN "subject"
+        ON "work".work_id = "subject".work_id
+        WHERE "subject".subject = '{name}'
     '''
 
     with db.engine.connect() as conn:
