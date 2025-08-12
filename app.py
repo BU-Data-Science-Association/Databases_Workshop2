@@ -31,9 +31,6 @@ db = SQLAlchemy(app)
 # Enable Flask-Migrate commands "flask db init/migrate/upgrade" to work
 migrate = Migrate(app, db)
 
-# The import must be done after db initialization due to circular import issue
-from models import Restaurant, Review
-
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
