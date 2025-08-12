@@ -16,6 +16,7 @@ if 'WEBSITE_HOSTNAME' not in os.environ:
     app.config.from_object('azureproject.development')
 else:
     # production
+    print("What are you doing here, this is just a workshop.")
     print("Loading config.production.")
     app.config.from_object('azureproject.production')
 
@@ -37,10 +38,10 @@ from models import Restaurant, Review
 def index():
     return render_template('index.html')
 
-@app.route('/diningHall/<name>', methods = ['GET'])
-def diningHall(name):
+@app.route('/subject/<name>', methods = ['GET'])
+def subject(name):
 
-    # TODO Write SQL Query to get all food items at dining hall -> {name} 
+    # TODO Write SQL Query to get all artworks that depict the subject given in {name} 
 
     sql = f'''
         SELECT *
@@ -57,8 +58,8 @@ def diningHall(name):
     rows = [dict(row._mapping) for row in result]
     return render_template('index.html', results = rows)
 
-@app.route('/meat/<name>', methods = ['GET'])
-def meat(name):
+@app.route('/style/<name>', methods = ['GET'])
+def style(name):
 
     # TODO Write SQL Query to get all food items containing meat -> {name} 
 
@@ -99,38 +100,36 @@ def mealType(name):
     return render_template('index.html', results = rows)
 
 
-@app.route('/add_dhall', methods=['POST'])
+@app.route('/add_artwork', methods=['POST'])
 @csrf.exempt
-def add_dhall():
+def add_artwork():
     try:
-        name = request.form.get('name')
-        ingredients = request.form.get('ingredients')
-        station = request.form.get('station')
-        location = request.form.get('location')
-        meal_type = request.form.get('meal_type')
-        item_id = request.form.get('item_id')  # BIGINT
+        work_id = request.form.get('work_id')
+        work_name = request.form.get('work_name')
+        artist_id = request.form.get('artist_id')
+        style = request.form.get('style')
+        museum_id = request.form.get('museum_id')
     except KeyError as e:
         return jsonify({'error': f'Missing parameter: {str(e)}'}), 400
 
     sql = '''
-        INSERT INTO public."Dhall" ("Name", "Ingredients", "Station", "Location", "Meal Type", "Item ID")
-        VALUES (:name, :ingredients, :station, :location, :meal_type, :item_id)
+        INSERT INTO public."work" ("work_id", "name", "artist_id", "style", "museum_id")
+        VALUES (:work_id, :work_name, :artist_id, :style, :museum_id)
     '''
 
     with db.engine.begin() as conn:
         conn.execute(db.text(sql), {
-            'name': name,
-            'ingredients': ingredients,
-            'station': station,
-            'location': location,
-            'meal_type': meal_type,
-            'item_id': int(item_id)
+            'work_id': work_id,
+            'work_name': work_name,
+            'artist_id': artist_id,
+            'style': style,
+            'museum_id': museum_id,
         })
 
     return redirect(url_for('index'))
 
-@app.route('/add_dhall_form', methods=['GET'])
-def add_dhall_form():
+@app.route('/add_artwork_form', methods=['GET'])
+def add_artwork_form():
     return render_template('add.html')
 
 @app.route('/favicon.ico')
