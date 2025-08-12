@@ -58,7 +58,7 @@ def subject(name):
 @app.route('/style/<name>', methods = ['GET'])
 def style(name):
 
-    # TODO Write SQL Query to get all food items containing meat -> {name} 
+    # TODO Write SQL Query to get all the artworks of the given style. Bonus points if you can get all columns filled. -> {name} 
 
     sql = f'''
         SELECT * 
@@ -79,7 +79,7 @@ def style(name):
 def museum(name):
     name = name.lower()
 
-    # TODO Write SQL Query to get all food item served during meal_type -> {name} 
+    # TODO Write SQL Query to get all artworks from a certain museum. -> {name} 
 
     sql = f'''
         SELECT *
@@ -132,7 +132,7 @@ def add_artwork_form():
 @app.route('/dsa.ico')
 def dsa():
     return send_from_directory(os.path.join(app.root_path, 'static'),
-                        'dsa.ico', mimetype='image/vnd.microsoft.icon')
+                        'dsa.ico', mimetype='image/png')
 
 if __name__ == '__main__':
     app.run()

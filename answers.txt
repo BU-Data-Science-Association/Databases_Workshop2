@@ -1,3 +1,30 @@
+ANSWERS:
+
+Here is how I would recommend putting in the SQL commands in app.py under the to-dos:
+
+1.  Subject: 
+        SELECT *
+        FROM "work" 
+        LEFT JOIN "subject"
+        ON "work".work_id = "subject".work_id
+        WHERE "subject".subject = '{name}'
+        LIMIT 25
+
+2.  Style:
+        SELECT * 
+        FROM "work"
+        LEFT JOIN "subject"
+        ON "work".work_id = "subject".work_id
+        WHERE "work".style = '{name}'
+        LIMIT 25
+
+3. Museum:
+        SELECT *
+        FROM "work"
+        LEFT JOIN "subject"
+        ON "work".work_id = "subject".work_id
+        WHERE "work".museum_id = '{name}'
+        LIMIT 25
 
 SELECT DISTINCT *
 FROM public."Dhall" as dh
