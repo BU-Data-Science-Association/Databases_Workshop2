@@ -75,8 +75,8 @@ def style(name):
     rows = [dict(row._mapping) for row in result]
     return render_template('index.html', results = rows)
 
-@app.route('/meal_type/<name>', methods = ['GET'])
-def mealType(name):
+@app.route('/museum/<name>', methods = ['GET'])
+def museum(name):
     name = name.lower()
 
     # TODO Write SQL Query to get all food item served during meal_type -> {name} 
@@ -129,10 +129,10 @@ def add_artwork():
 def add_artwork_form():
     return render_template('add.html')
 
-@app.route('/favicon.ico')
-def favicon():
+@app.route('/dsa.ico')
+def dsa():
     return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
+                        'dsa.ico', mimetype='image/vnd.microsoft.icon')
 
 if __name__ == '__main__':
     app.run()
