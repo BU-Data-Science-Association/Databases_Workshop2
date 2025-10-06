@@ -42,11 +42,7 @@ def subject(name):
 
     sql = f'''
         SELECT *
-        FROM "work" 
-        LEFT JOIN "subject"
-        ON "work".work_id = "subject".work_id
-        WHERE "subject".subject = '{name}'
-        LIMIT 25
+        FROM ...
     '''
 
     with db.engine.connect() as conn:
@@ -61,12 +57,8 @@ def style(name):
     # TODO Write SQL Query to get all the artworks of the given style. Bonus points if you can get all columns filled. -> {name} 
 
     sql = f'''
-        SELECT * 
-        FROM "work"
-        LEFT JOIN "subject"
-        ON "work".work_id = "subject".work_id
-        WHERE "work".style = '{name}'
-        LIMIT 25
+        SELECT  
+        FROM
     '''
 
     with db.engine.connect() as conn:
@@ -82,12 +74,8 @@ def museum(name):
     # TODO Write SQL Query to get all artworks from a certain museum. -> {name} 
 
     sql = f'''
-        SELECT *
-        FROM "work"
-        LEFT JOIN "subject"
-        ON "work".work_id = "subject".work_id
-        WHERE "work".museum_id = '{name}'
-        LIMIT 25
+        SELECT 
+        FROM
     '''
     
     with db.engine.connect() as conn:

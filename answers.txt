@@ -25,16 +25,3 @@ Here is how I would recommend putting in the SQL commands in app.py under the to
         ON "work".work_id = "subject".work_id
         WHERE "work".museum_id = '{name}'
         LIMIT 25
-
-SELECT DISTINCT *
-FROM public."Dhall" as dh
-LEFT JOIN public."{name}_Calories" as c ON c."Name" = dh."Name"
-WHERE "Location" ILIKE '%{name}%'
-
-SELECT *
-FROM public."Dhall"
-WHERE "Ingredients" ILIKE '%{name}%' 
-
-SELECT DISTINCT *
-FROM public."Dhall"
-WHERE "Meal Type" ILIKE '%{name}%'

@@ -7,7 +7,7 @@ This is a Python web app using the Flask framework and a Postgres database
 - It can be used as a playground for testing SQL queries  
   
 ## How to Use Locally
-Preferably, this is used locally (not on GitHub Codespaces)
+Preferably, this is used in a DevContainer with Docker. (not on GitHub Codespaces)
 
 1. Download this project from GitHub and put it on your local computer.
 
