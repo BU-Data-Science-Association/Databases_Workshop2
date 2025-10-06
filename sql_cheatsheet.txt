@@ -1,0 +1,13 @@
+## Common SQL Commands
+
+1. SELECT: allows you to choose what column that you want
+2. FROM: specifies which tables that you are pulling from
+3. JOIN: bring two tables together
+4. ON: used with after a JOIN and must include left_table.id = right_table.id to tell SQL which columns are the same across tables
+5. GROUP BY: aggregate your database
+6. HAVING: filter groups from GROUPBY
+7. WHERE: filter rows based on a condition (ex: column > 5)
+8. LIKE: used with WHERE to perform pattern matching (think about Regular Expression and * and %'s)
+9. UNION: combine the result of SELECT statements and remove duplicates
+10. ORDER BY: specify which columns you want to use to re-order the rows (ex: writing "ORDER BY table.first_name" would arrange the table to be in alphabetical order of first names)
+11. DESC: used after ORDER BY to put the rows in descending order (ORDER BY is in ascending (0-9 A-Z) order)

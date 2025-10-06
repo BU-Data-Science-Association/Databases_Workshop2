@@ -1,4 +1,4 @@
-# A Python (Flask) web app with PostgreSQL ~~in Azure~~
+# A Python (Flask) web app with PostgreSQL
 ### Workshop for the BU Data Science Association, Fall 2025
 ## This was adapted from BU Data Science Association's Spring 2025 Workshop, which was adapted from Pamela Fox
 
@@ -6,7 +6,7 @@ This is a Python web app using the Flask framework and a Postgres database
   
 - It can be used as a playground for testing SQL queries  
   
-## How to Use Locally
+## How to Use with VSCode DevContainers
 Preferably, this is used in a DevContainer with Docker. (not on GitHub Codespaces)
 
 1. Download this project from GitHub and put it on your local computer.
@@ -37,4 +37,4 @@ If you have issues, navigate to bottom of the screen and look at your ports. You
 
 7. Open the link to port 5000 and try out the flask app
 
-- Note that Github Copilot is automatically installed and offers terrible suggestions. Gf this is a problem you can disable it in extensions  
+- Note that Github Copilot is automatically installed and offers terrible suggestions. If this is a problem you can disable it in extensions  
