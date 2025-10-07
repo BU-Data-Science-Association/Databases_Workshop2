@@ -2,8 +2,8 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 # Loading in CSVs for the work and subject.
-subject = pd.read_csv("/workspace/data/subject.csv")
-work = pd.read_csv("/workspace/data/work.csv")
+subject = pd.read_csv("./data/subject.csv")
+work = pd.read_csv("./data/work.csv")
 
 # Loading them to Postgres
 engine = create_engine("postgresql://app_user:app_password@localhost:5432/app")  # adjust accordingly
